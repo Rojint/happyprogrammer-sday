@@ -1,0 +1,153 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.title h2 {
+	font-size: 46px;
+	font-family: "Lato", sans-serif;
+	margin-top: 5em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: white;
+	background: -webkit-linear-gradient(#eee, #333);
+	-webkit-background-clip:  text;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+	display: block;
+	position: relative;
+	z-index: 3;
+	letter-spacing: 5px;
+
+}
+
+@keyframes move-twinkle-back {
+	from {background-position: 0 0;}
+	to {background-position: -10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+	from {background-position: 0 0;}
+	to {background-position: 10000px 0px;}
+}
+
+
+.stars, .twinkling, .clouds{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.stars{
+	background: #000 url(stars.png) repeat top center;
+
+	z-index: 0;
+}
+
+.twinkling{
+	background: transparent url(twinkling.png) repeat top center;
+	animation: move-twinkle-back 200s linear infinite;
+	z-index: 1;
+}
+
+.clouds{
+	background: transparent url(clouds.png) repeat top center;
+	animation: move-clouds-back 200s linear infinite;
+	z-index: 2;
+	opacity: 0.4;
+}
+
+
+nav {
+	position: absolute;
+	top: 0;
+	height: 10vh;
+	width: 100%;
+	background: #FD4A33;
+	animation: none;
+	z-index: 4;
+}
+
+nav .logo{
+	color: rgb(226, 226, 226);
+	font-family: "Lato", sans-serif;
+	font-size: 20px;
+	font-weight: 200;
+	padding: 20px;
+	padding-left: 40px;
+	letter-spacing: 4px;
+}
+
+
+.dbtn {
+	position: absolute;
+	align-items: center;
+	top: 85%;
+	right: 42%;
+	justify-content: center;
+	z-index: 6;
+}
+
+
+.btn {
+	height: 5vh;
+	font-family: 'Lato';
+	font-size: 20px;
+	width: 100%;
+	color: rgb(266, 266, 266);
+	padding: 2px;
+	border-radius: 25px;
+	background-color: #FD4A33;
+	border-style: none;
+	cursor: pointer;
+}
+
+.popup{
+	font-family: sans-serif;
+	width: 400px;
+	background: #fff;
+	border-radius: 6px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0.1);
+	text-align: center;
+	padding: 20px 30px 30px;
+	color: #333;
+	visibility: hidden;
+	transition: transform 0.4s, top 0.4s;
+}
+
+.open-popup{
+	visibility: visible;
+	top: -550%;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h3{
+	font-weight: 400;
+	font-family: "Lato";
+	
+
+
+}
+
+.popup button {
+	width: 100%;
+	margin-top: 50px;
+	padding: 10px 0;
+	color: #fff;
+	background-color: #FD4A33;
+	border: 0;
+	outline: none;
+	font-size: 18px;
+	border-radius: 4px;
+	cursor: pointer;
+}
